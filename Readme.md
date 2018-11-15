@@ -1,3 +1,8 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [CopyNodesOperation.cs](./CS/CopyNodesExample/CopyNodesOperation.cs) (VB: [CopyNodesOperation.vb](./VB/CopyNodesExample/CopyNodesOperation.vb))
+<!-- default file list end -->
 # How to copy nodes from one TreeList to another
 
 
