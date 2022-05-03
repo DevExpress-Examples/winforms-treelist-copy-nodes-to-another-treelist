@@ -1,171 +1,222 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
+
 Namespace CopyNodesExample
-	Partial Public Class MainForm
-		''' <summary>
-		''' Required designer variable.
-		''' </summary>
-		Private components As System.ComponentModel.IContainer = Nothing
+    Partial Class MainForm
+        ''' <summary>
+        ''' Required designer variable.
+        ''' </summary>
+        Private components As ComponentModel.IContainer = Nothing
 
-		''' <summary>
-		''' Clean up any resources being used.
-		''' </summary>
-		''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-			If disposing AndAlso (components IsNot Nothing) Then
-				components.Dispose()
-			End If
-			MyBase.Dispose(disposing)
-		End Sub
+        ''' <summary>
+        ''' Clean up any resources being used.
+        ''' </summary>
+        ''' <paramname="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
 
-		#Region "Windows Form Designer generated code"
+            MyBase.Dispose(disposing)
+        End Sub
 
-		''' <summary>
-		''' Required method for Designer support - do not modify
-		''' the contents of this method with the code editor.
-		''' </summary>
-		Private Sub InitializeComponent()
-            Me.fContainer = New DevExpress.XtraEditors.SplitContainerControl
-            Me.sourceTreeList = New DevExpress.XtraTreeList.TreeList
-            Me.panelControl1 = New DevExpress.XtraEditors.PanelControl
-            Me.btnCopy = New DevExpress.XtraEditors.SimpleButton
-            Me.btnDeleteNode = New DevExpress.XtraEditors.SimpleButton
-            Me.btnAddChild = New DevExpress.XtraEditors.SimpleButton
-            Me.btnAddRoot = New DevExpress.XtraEditors.SimpleButton
-            Me.btnAddColumn = New DevExpress.XtraEditors.SimpleButton
-            Me.txtColumnName = New DevExpress.XtraEditors.TextEdit
-            Me.labelControl1 = New DevExpress.XtraEditors.LabelControl
-            CType(Me.fContainer, System.ComponentModel.ISupportInitialize).BeginInit()
-            Me.fContainer.SuspendLayout()
-            CType(Me.sourceTreeList, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.panelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            Me.panelControl1.SuspendLayout()
-            CType(Me.txtColumnName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+#Region "Windows Form Designer generated code"
+
+        ''' <summary>
+        ''' Required method for Designer support - do not modify
+        ''' the contents of this method with the code editor.
+        ''' </summary>
+        Private Sub InitializeComponent()
+            Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
+            Me.formAssistant1 = New DevExpress.XtraBars.FormAssistant()
+            Me.ribbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
+            Me.copyButtonItem = New DevExpress.XtraBars.BarButtonItem()
+            Me.clearButtonItem = New DevExpress.XtraBars.BarButtonItem()
+            Me.skinDropDownButtonItem1 = New DevExpress.XtraBars.SkinDropDownButtonItem()
+            Me.skinPaletteRibbonGalleryBarItem1 = New DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem()
+            Me.barStaticItem1 = New DevExpress.XtraBars.BarStaticItem()
+            Me.barStaticItem2 = New DevExpress.XtraBars.BarStaticItem()
+            Me.ribbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
+            Me.ribbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+            Me.ribbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+            Me.ribbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
+            Me.ribbonPage2 = New DevExpress.XtraBars.Ribbon.RibbonPage()
+            Me.splitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+            Me.treeList1 = New DevExpress.XtraTreeList.TreeList()
+            Me.treeList2 = New DevExpress.XtraTreeList.TreeList()
+            CType(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.splitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
+            Me.splitContainerControl1.Panel1.SuspendLayout()
+            CType(Me.splitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
+            Me.splitContainerControl1.Panel2.SuspendLayout()
+            Me.splitContainerControl1.SuspendLayout()
+            CType(Me.treeList1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.treeList2, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             '
-            'fContainer
+            'ribbonControl1
             '
-            Me.fContainer.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.fContainer.Location = New System.Drawing.Point(0, 0)
-            Me.fContainer.Name = "fContainer"
-            Me.fContainer.Panel1.Controls.Add(Me.sourceTreeList)
-            Me.fContainer.Panel1.Text = "Panel1"
-            Me.fContainer.Panel2.Text = "Panel2"
-            Me.fContainer.Size = New System.Drawing.Size(1259, 582)
-            Me.fContainer.SplitterPosition = 644
-            Me.fContainer.TabIndex = 0
-            Me.fContainer.Text = "splitContainerControl1"
+            Me.ribbonControl1.ExpandCollapseItem.Id = 0
+            Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.copyButtonItem, Me.clearButtonItem, Me.skinDropDownButtonItem1, Me.skinPaletteRibbonGalleryBarItem1, Me.barStaticItem1, Me.barStaticItem2})
+            Me.ribbonControl1.Location = New System.Drawing.Point(0, 0)
+            Me.ribbonControl1.MaxItemId = 8
+            Me.ribbonControl1.Name = "ribbonControl1"
+            Me.ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.ribbonPage1})
+            Me.ribbonControl1.Size = New System.Drawing.Size(956, 158)
+            Me.ribbonControl1.StatusBar = Me.ribbonStatusBar1
             '
-            'sourceTreeList
+            'copyButtonItem
             '
-            Me.sourceTreeList.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.sourceTreeList.Location = New System.Drawing.Point(0, 0)
-            Me.sourceTreeList.Name = "sourceTreeList"
-            Me.sourceTreeList.Size = New System.Drawing.Size(644, 582)
-            Me.sourceTreeList.TabIndex = 0
+            Me.copyButtonItem.Caption = "Copy"
+            Me.copyButtonItem.Id = 1
+            Me.copyButtonItem.ImageOptions.SvgImage = CType(resources.GetObject("copyButtonItem.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+            Me.copyButtonItem.Name = "copyButtonItem"
             '
-            'panelControl1
+            'clearButtonItem
             '
-            Me.panelControl1.Controls.Add(Me.btnCopy)
-            Me.panelControl1.Controls.Add(Me.btnDeleteNode)
-            Me.panelControl1.Controls.Add(Me.btnAddChild)
-            Me.panelControl1.Controls.Add(Me.btnAddRoot)
-            Me.panelControl1.Controls.Add(Me.btnAddColumn)
-            Me.panelControl1.Controls.Add(Me.txtColumnName)
-            Me.panelControl1.Controls.Add(Me.labelControl1)
-            Me.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-            Me.panelControl1.Location = New System.Drawing.Point(0, 582)
-            Me.panelControl1.Name = "panelControl1"
-            Me.panelControl1.Size = New System.Drawing.Size(1259, 33)
-            Me.panelControl1.TabIndex = 1
+            Me.clearButtonItem.Caption = "Clear"
+            Me.clearButtonItem.Id = 2
+            Me.clearButtonItem.ImageOptions.SvgImage = Global.Resources.clearall
+            Me.clearButtonItem.Name = "clearButtonItem"
             '
-            'btnCopy
+            'skinDropDownButtonItem1
             '
-            Me.btnCopy.Location = New System.Drawing.Point(519, 5)
-            Me.btnCopy.Name = "btnCopy"
-            Me.btnCopy.Size = New System.Drawing.Size(75, 23)
-            Me.btnCopy.TabIndex = 6
-            Me.btnCopy.Text = "Copy"
+            Me.skinDropDownButtonItem1.Id = 3
+            Me.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1"
             '
-            'btnDeleteNode
+            'skinPaletteRibbonGalleryBarItem1
             '
-            Me.btnDeleteNode.Location = New System.Drawing.Point(438, 5)
-            Me.btnDeleteNode.Name = "btnDeleteNode"
-            Me.btnDeleteNode.Size = New System.Drawing.Size(75, 23)
-            Me.btnDeleteNode.TabIndex = 5
-            Me.btnDeleteNode.Text = "Delete Node"
+            Me.skinPaletteRibbonGalleryBarItem1.Caption = "skinPaletteRibbonGalleryBarItem1"
+            Me.skinPaletteRibbonGalleryBarItem1.Id = 5
+            Me.skinPaletteRibbonGalleryBarItem1.Name = "skinPaletteRibbonGalleryBarItem1"
             '
-            'btnAddChild
+            'barStaticItem1
             '
-            Me.btnAddChild.Location = New System.Drawing.Point(357, 5)
-            Me.btnAddChild.Name = "btnAddChild"
-            Me.btnAddChild.Size = New System.Drawing.Size(75, 23)
-            Me.btnAddChild.TabIndex = 4
-            Me.btnAddChild.Text = "Add Child"
+            Me.barStaticItem1.Caption = "Source TreeList"
+            Me.barStaticItem1.Id = 6
+            Me.barStaticItem1.Name = "barStaticItem1"
             '
-            'btnAddRoot
+            'barStaticItem2
             '
-            Me.btnAddRoot.Location = New System.Drawing.Point(276, 5)
-            Me.btnAddRoot.Name = "btnAddRoot"
-            Me.btnAddRoot.Size = New System.Drawing.Size(75, 23)
-            Me.btnAddRoot.TabIndex = 3
-            Me.btnAddRoot.Text = "Add Root"
+            Me.barStaticItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
+            Me.barStaticItem2.Caption = "Target TreeList"
+            Me.barStaticItem2.Id = 7
+            Me.barStaticItem2.Name = "barStaticItem2"
             '
-            'btnAddColumn
+            'ribbonPage1
             '
-            Me.btnAddColumn.Location = New System.Drawing.Point(195, 5)
-            Me.btnAddColumn.Name = "btnAddColumn"
-            Me.btnAddColumn.Size = New System.Drawing.Size(75, 23)
-            Me.btnAddColumn.TabIndex = 2
-            Me.btnAddColumn.Text = "Add Column"
+            Me.ribbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.ribbonPageGroup2, Me.ribbonPageGroup1})
+            Me.ribbonPage1.Name = "ribbonPage1"
+            Me.ribbonPage1.Text = "Main"
             '
-            'txtColumnName
+            'ribbonPageGroup2
             '
-            Me.txtColumnName.Location = New System.Drawing.Point(89, 6)
-            Me.txtColumnName.Name = "txtColumnName"
-            Me.txtColumnName.Size = New System.Drawing.Size(100, 20)
-            Me.txtColumnName.TabIndex = 1
+            Me.ribbonPageGroup2.ItemLinks.Add(Me.skinDropDownButtonItem1)
+            Me.ribbonPageGroup2.ItemLinks.Add(Me.skinPaletteRibbonGalleryBarItem1)
+            Me.ribbonPageGroup2.Name = "ribbonPageGroup2"
+            Me.ribbonPageGroup2.Text = "Look and Feel"
             '
-            'labelControl1
+            'ribbonPageGroup1
             '
-            Me.labelControl1.Location = New System.Drawing.Point(13, 7)
-            Me.labelControl1.Name = "labelControl1"
-            Me.labelControl1.Size = New System.Drawing.Size(69, 13)
-            Me.labelControl1.TabIndex = 0
-            Me.labelControl1.Text = "Column Name:"
+            Me.ribbonPageGroup1.ItemLinks.Add(Me.copyButtonItem)
+            Me.ribbonPageGroup1.ItemLinks.Add(Me.clearButtonItem)
+            Me.ribbonPageGroup1.Name = "ribbonPageGroup1"
+            Me.ribbonPageGroup1.Text = "Actions"
+            '
+            'ribbonStatusBar1
+            '
+            Me.ribbonStatusBar1.ItemLinks.Add(Me.barStaticItem1)
+            Me.ribbonStatusBar1.ItemLinks.Add(Me.barStaticItem2)
+            Me.ribbonStatusBar1.Location = New System.Drawing.Point(0, 400)
+            Me.ribbonStatusBar1.Name = "ribbonStatusBar1"
+            Me.ribbonStatusBar1.Ribbon = Me.ribbonControl1
+            Me.ribbonStatusBar1.Size = New System.Drawing.Size(956, 24)
+            '
+            'ribbonPage2
+            '
+            Me.ribbonPage2.Name = "ribbonPage2"
+            Me.ribbonPage2.Text = "ribbonPage2"
+            '
+            'splitContainerControl1
+            '
+            Me.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
+            Me.splitContainerControl1.Location = New System.Drawing.Point(0, 158)
+            Me.splitContainerControl1.Name = "splitContainerControl1"
+            '
+            'splitContainerControl1.Panel1
+            '
+            Me.splitContainerControl1.Panel1.Controls.Add(Me.treeList1)
+            Me.splitContainerControl1.Panel1.Text = "Panel1"
+            '
+            'splitContainerControl1.Panel2
+            '
+            Me.splitContainerControl1.Panel2.Controls.Add(Me.treeList2)
+            Me.splitContainerControl1.Panel2.Text = "Panel2"
+            Me.splitContainerControl1.Size = New System.Drawing.Size(956, 242)
+            Me.splitContainerControl1.SplitterPosition = 458
+            Me.splitContainerControl1.TabIndex = 2
+            '
+            'treeList1
+            '
+            Me.treeList1.Dock = System.Windows.Forms.DockStyle.Fill
+            Me.treeList1.Location = New System.Drawing.Point(0, 0)
+            Me.treeList1.MenuManager = Me.ribbonControl1
+            Me.treeList1.Name = "treeList1"
+            Me.treeList1.Size = New System.Drawing.Size(458, 242)
+            Me.treeList1.TabIndex = 0
+            '
+            'treeList2
+            '
+            Me.treeList2.Dock = System.Windows.Forms.DockStyle.Fill
+            Me.treeList2.Location = New System.Drawing.Point(0, 0)
+            Me.treeList2.MenuManager = Me.ribbonControl1
+            Me.treeList2.Name = "treeList2"
+            Me.treeList2.Size = New System.Drawing.Size(488, 242)
+            Me.treeList2.TabIndex = 0
             '
             'MainForm
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-            Me.ClientSize = New System.Drawing.Size(1259, 615)
-            Me.Controls.Add(Me.fContainer)
-            Me.Controls.Add(Me.panelControl1)
+            Me.ClientSize = New System.Drawing.Size(956, 424)
+            Me.Controls.Add(Me.splitContainerControl1)
+            Me.Controls.Add(Me.ribbonStatusBar1)
+            Me.Controls.Add(Me.ribbonControl1)
             Me.Name = "MainForm"
+            Me.Ribbon = Me.ribbonControl1
+            Me.StatusBar = Me.ribbonStatusBar1
             Me.Text = "Form1"
-            CType(Me.fContainer, System.ComponentModel.ISupportInitialize).EndInit()
-            Me.fContainer.ResumeLayout(False)
-            CType(Me.sourceTreeList, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.panelControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            Me.panelControl1.ResumeLayout(False)
-            Me.panelControl1.PerformLayout()
-            CType(Me.txtColumnName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.splitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.splitContainerControl1.Panel1.ResumeLayout(False)
+            CType(Me.splitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.splitContainerControl1.Panel2.ResumeLayout(False)
+            CType(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.splitContainerControl1.ResumeLayout(False)
+            CType(Me.treeList1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.treeList2, System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
+            Me.PerformLayout()
 
         End Sub
 
 #End Region
 
-        Private fContainer As DevExpress.XtraEditors.SplitContainerControl
-		Private WithEvents sourceTreeList As DevExpress.XtraTreeList.TreeList
-		Private panelControl1 As DevExpress.XtraEditors.PanelControl
-		Private WithEvents btnCopy As DevExpress.XtraEditors.SimpleButton
-		Private WithEvents btnDeleteNode As DevExpress.XtraEditors.SimpleButton
-		Private WithEvents btnAddChild As DevExpress.XtraEditors.SimpleButton
-		Private WithEvents btnAddRoot As DevExpress.XtraEditors.SimpleButton
-		Private WithEvents btnAddColumn As DevExpress.XtraEditors.SimpleButton
-		Private WithEvents txtColumnName As DevExpress.XtraEditors.TextEdit
-		Private labelControl1 As DevExpress.XtraEditors.LabelControl
-	End Class
+        Private formAssistant1 As DevExpress.XtraBars.FormAssistant
+        Private ribbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
+        Private ribbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
+        Private ribbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+        Private ribbonStatusBar1 As DevExpress.XtraBars.Ribbon.RibbonStatusBar
+        Private ribbonPage2 As DevExpress.XtraBars.Ribbon.RibbonPage
+        Private copyButtonItem As DevExpress.XtraBars.BarButtonItem
+        Private splitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
+        Private treeList1 As DevExpress.XtraTreeList.TreeList
+        Private treeList2 As DevExpress.XtraTreeList.TreeList
+        Private clearButtonItem As DevExpress.XtraBars.BarButtonItem
+        Private skinDropDownButtonItem1 As DevExpress.XtraBars.SkinDropDownButtonItem
+        Private skinPaletteRibbonGalleryBarItem1 As DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem
+        Private ribbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+        Private barStaticItem1 As DevExpress.XtraBars.BarStaticItem
+        Private barStaticItem2 As DevExpress.XtraBars.BarStaticItem
+    End Class
 End Namespace
-

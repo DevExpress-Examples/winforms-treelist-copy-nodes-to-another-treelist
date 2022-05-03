@@ -117,10 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\copy.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2, Version=18.2.16.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+    <value>..\..\..\..\..\..\AppData\Local\Temp\c9e47e53-beaf-4f09-8314-e1b893c1de67\copy.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2, Version=18.2.16.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="clearall" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clearall.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2, Version=18.2.16.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+    <value>..\..\..\..\..\..\AppData\Local\Temp\cf143dc9-4c12-4c2b-8349-0ef742622420\clearall.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2, Version=18.2.16.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
 </root>

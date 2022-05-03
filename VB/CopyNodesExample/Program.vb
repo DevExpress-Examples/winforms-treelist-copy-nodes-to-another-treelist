@@ -1,21 +1,18 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Windows.Forms
 Imports DevExpress.Skins
 
 Namespace CopyNodesExample
-	Friend NotInheritable Class Program
-		''' <summary>
-		''' The main entry point for the application.
-		''' </summary>
-		Private Sub New()
-		End Sub
-		<STAThread> _
-		Shared Sub Main()
-			Application.EnableVisualStyles()
-			Application.SetCompatibleTextRenderingDefault(False)
-			SkinManager.EnableFormSkins()
-			Application.Run(New MainForm())
-		End Sub
-	End Class
+    Friend Module Program
+        ''' <summary>
+        ''' The main entry point for the application.
+        ''' </summary>
+        <STAThread>
+        Sub Main()
+            Call Application.EnableVisualStyles()
+            Application.SetCompatibleTextRenderingDefault(False)
+            Call SkinManager.EnableFormSkins()
+            Call Application.Run(New MainForm())
+        End Sub
+    End Module
 End Namespace

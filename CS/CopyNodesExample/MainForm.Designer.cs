@@ -23,156 +23,207 @@ namespace CopyNodesExample {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.container = new DevExpress.XtraEditors.SplitContainerControl();
-            this.sourceTreeList = new DevExpress.XtraTreeList.TreeList();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btnCopy = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDeleteNode = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAddChild = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAddRoot = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAddColumn = new DevExpress.XtraEditors.SimpleButton();
-            this.txtColumnName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.container)).BeginInit();
-            this.container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sourceTreeList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtColumnName.Properties)).BeginInit();
+            this.formAssistant1 = new DevExpress.XtraBars.FormAssistant();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.copyButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.clearButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.treeList1 = new DevExpress.XtraTreeList.TreeList();
+            this.treeList2 = new DevExpress.XtraTreeList.TreeList();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
+            this.splitContainerControl1.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
+            this.splitContainerControl1.Panel2.SuspendLayout();
+            this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeList2)).BeginInit();
             this.SuspendLayout();
             // 
-            // container
+            // ribbonControl1
             // 
-            this.container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container.Location = new System.Drawing.Point(0, 0);
-            this.container.Name = "container";
-            this.container.Panel1.Controls.Add(this.sourceTreeList);
-            this.container.Panel1.Text = "Panel1";
-            this.container.Panel2.Text = "Panel2";
-            this.container.Size = new System.Drawing.Size(1259, 582);
-            this.container.SplitterPosition = 644;
-            this.container.TabIndex = 0;
-            this.container.Text = "splitContainerControl1";
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.copyButtonItem,
+            this.clearButtonItem,
+            this.skinDropDownButtonItem1,
+            this.skinPaletteRibbonGalleryBarItem1,
+            this.barStaticItem1,
+            this.barStaticItem2});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.MaxItemId = 8;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage1});
+            this.ribbonControl1.Size = new System.Drawing.Size(956, 158);
+            this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
-            // sourceTreeList
+            // copyButtonItem
             // 
-            this.sourceTreeList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sourceTreeList.Location = new System.Drawing.Point(0, 0);
-            this.sourceTreeList.Name = "sourceTreeList";
-            this.sourceTreeList.Size = new System.Drawing.Size(644, 582);
-            this.sourceTreeList.TabIndex = 0;
-            this.sourceTreeList.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.OnSourceTreeListFocusedNodeChanged);
-            this.sourceTreeList.NodeChanged += new DevExpress.XtraTreeList.NodeChangedEventHandler(this.OnSourceTreeListNodeChanged);
+            this.copyButtonItem.Caption = "Copy";
+            this.copyButtonItem.Id = 1;
+            this.copyButtonItem.ImageOptions.SvgImage = global::CopyNodesExample.Properties.Resources.copy;
+            this.copyButtonItem.Name = "copyButtonItem";
             // 
-            // panelControl1
+            // clearButtonItem
             // 
-            this.panelControl1.Controls.Add(this.btnCopy);
-            this.panelControl1.Controls.Add(this.btnDeleteNode);
-            this.panelControl1.Controls.Add(this.btnAddChild);
-            this.panelControl1.Controls.Add(this.btnAddRoot);
-            this.panelControl1.Controls.Add(this.btnAddColumn);
-            this.panelControl1.Controls.Add(this.txtColumnName);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 582);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1259, 33);
-            this.panelControl1.TabIndex = 1;
+            this.clearButtonItem.Caption = "Clear";
+            this.clearButtonItem.Id = 2;
+            this.clearButtonItem.ImageOptions.SvgImage = global::CopyNodesExample.Properties.Resources.clearall;
+            this.clearButtonItem.Name = "clearButtonItem";
             // 
-            // btnCopy
+            // skinDropDownButtonItem1
             // 
-            this.btnCopy.Location = new System.Drawing.Point(519, 5);
-            this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(75, 23);
-            this.btnCopy.TabIndex = 6;
-            this.btnCopy.Text = "Copy";
-            this.btnCopy.Click += new System.EventHandler(this.OnCopyButtonClick);
+            this.skinDropDownButtonItem1.Id = 3;
+            this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
             // 
-            // btnDeleteNode
+            // skinPaletteRibbonGalleryBarItem1
             // 
-            this.btnDeleteNode.Location = new System.Drawing.Point(438, 5);
-            this.btnDeleteNode.Name = "btnDeleteNode";
-            this.btnDeleteNode.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteNode.TabIndex = 5;
-            this.btnDeleteNode.Text = "Delete Node";
-            this.btnDeleteNode.Click += new System.EventHandler(this.OnDeleteNodeButtonClick);
+            this.skinPaletteRibbonGalleryBarItem1.Caption = "skinPaletteRibbonGalleryBarItem1";
+            this.skinPaletteRibbonGalleryBarItem1.Id = 5;
+            this.skinPaletteRibbonGalleryBarItem1.Name = "skinPaletteRibbonGalleryBarItem1";
             // 
-            // btnAddChild
+            // barStaticItem1
             // 
-            this.btnAddChild.Location = new System.Drawing.Point(357, 5);
-            this.btnAddChild.Name = "btnAddChild";
-            this.btnAddChild.Size = new System.Drawing.Size(75, 23);
-            this.btnAddChild.TabIndex = 4;
-            this.btnAddChild.Text = "Add Child";
-            this.btnAddChild.Click += new System.EventHandler(this.OnAddChildButtonClick);
+            this.barStaticItem1.Caption = "Source TreeList";
+            this.barStaticItem1.Id = 6;
+            this.barStaticItem1.Name = "barStaticItem1";
             // 
-            // btnAddRoot
+            // barStaticItem2
             // 
-            this.btnAddRoot.Location = new System.Drawing.Point(276, 5);
-            this.btnAddRoot.Name = "btnAddRoot";
-            this.btnAddRoot.Size = new System.Drawing.Size(75, 23);
-            this.btnAddRoot.TabIndex = 3;
-            this.btnAddRoot.Text = "Add Root";
-            this.btnAddRoot.Click += new System.EventHandler(this.OnAddRootButtonClick);
+            this.barStaticItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barStaticItem2.Caption = "Target TreeList";
+            this.barStaticItem2.Id = 7;
+            this.barStaticItem2.Name = "barStaticItem2";
             // 
-            // btnAddColumn
+            // ribbonPage1
             // 
-            this.btnAddColumn.Location = new System.Drawing.Point(195, 5);
-            this.btnAddColumn.Name = "btnAddColumn";
-            this.btnAddColumn.Size = new System.Drawing.Size(75, 23);
-            this.btnAddColumn.TabIndex = 2;
-            this.btnAddColumn.Text = "Add Column";
-            this.btnAddColumn.Click += new System.EventHandler(this.OnAddColumnButtonClick);
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup1});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "Main";
             // 
-            // txtColumnName
+            // ribbonPageGroup2
             // 
-            this.txtColumnName.Location = new System.Drawing.Point(89, 6);
-            this.txtColumnName.Name = "txtColumnName";
-            this.txtColumnName.Size = new System.Drawing.Size(100, 20);
-            this.txtColumnName.TabIndex = 1;
-            this.txtColumnName.TextChanged += new System.EventHandler(this.OnEditorColumnNameTextChanged);
+            this.ribbonPageGroup2.ItemLinks.Add(this.skinDropDownButtonItem1);
+            this.ribbonPageGroup2.ItemLinks.Add(this.skinPaletteRibbonGalleryBarItem1);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Look and Feel";
             // 
-            // labelControl1
+            // ribbonPageGroup1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(13, 7);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(69, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Column Name:";
+            this.ribbonPageGroup1.ItemLinks.Add(this.copyButtonItem);
+            this.ribbonPageGroup1.ItemLinks.Add(this.clearButtonItem);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Actions";
+            // 
+            // ribbonStatusBar1
+            // 
+            this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
+            this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem2);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 400);
+            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
+            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(956, 24);
+            // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "ribbonPage2";
+            // 
+            // splitContainerControl1
+            // 
+            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 158);
+            this.splitContainerControl1.Name = "splitContainerControl1";
+            // 
+            // splitContainerControl1.Panel1
+            // 
+            this.splitContainerControl1.Panel1.Controls.Add(this.treeList1);
+            this.splitContainerControl1.Panel1.Text = "Panel1";
+            // 
+            // splitContainerControl1.Panel2
+            // 
+            this.splitContainerControl1.Panel2.Controls.Add(this.treeList2);
+            this.splitContainerControl1.Panel2.Text = "Panel2";
+            this.splitContainerControl1.Size = new System.Drawing.Size(956, 242);
+            this.splitContainerControl1.SplitterPosition = 458;
+            this.splitContainerControl1.TabIndex = 2;
+            // 
+            // treeList1
+            // 
+            this.treeList1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeList1.Location = new System.Drawing.Point(0, 0);
+            this.treeList1.MenuManager = this.ribbonControl1;
+            this.treeList1.Name = "treeList1";
+            this.treeList1.Size = new System.Drawing.Size(458, 242);
+            this.treeList1.TabIndex = 0;
+            // 
+            // treeList2
+            // 
+            this.treeList2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeList2.Location = new System.Drawing.Point(0, 0);
+            this.treeList2.MenuManager = this.ribbonControl1;
+            this.treeList2.Name = "treeList2";
+            this.treeList2.Size = new System.Drawing.Size(488, 242);
+            this.treeList2.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 615);
-            this.Controls.Add(this.container);
-            this.Controls.Add(this.panelControl1);
+            this.ClientSize = new System.Drawing.Size(956, 424);
+            this.Controls.Add(this.splitContainerControl1);
+            this.Controls.Add(this.ribbonStatusBar1);
+            this.Controls.Add(this.ribbonControl1);
             this.Name = "MainForm";
+            this.Ribbon = this.ribbonControl1;
+            this.StatusBar = this.ribbonStatusBar1;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.OnFormLoad);
-            ((System.ComponentModel.ISupportInitialize)(this.container)).EndInit();
-            this.container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sourceTreeList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtColumnName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
+            this.splitContainerControl1.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
+            this.splitContainerControl1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
+            this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeList2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.SplitContainerControl container;
-        private DevExpress.XtraTreeList.TreeList sourceTreeList;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.SimpleButton btnCopy;
-        private DevExpress.XtraEditors.SimpleButton btnDeleteNode;
-        private DevExpress.XtraEditors.SimpleButton btnAddChild;
-        private DevExpress.XtraEditors.SimpleButton btnAddRoot;
-        private DevExpress.XtraEditors.SimpleButton btnAddColumn;
-        private DevExpress.XtraEditors.TextEdit txtColumnName;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraBars.FormAssistant formAssistant1;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.BarButtonItem copyButtonItem;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
+        private DevExpress.XtraTreeList.TreeList treeList1;
+        private DevExpress.XtraTreeList.TreeList treeList2;
+        private DevExpress.XtraBars.BarButtonItem clearButtonItem;
+        private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem1;
+        private DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem skinPaletteRibbonGalleryBarItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
     }
 }
 

@@ -1,73 +1,69 @@
-using System;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using DevExpress.XtraTreeList;
-using DevExpress.XtraTreeList.Columns;
+using System.Collections.Generic;
+using System.Linq;
+using DevExpress.XtraTreeList.Nodes;
 
 namespace CopyNodesExample {
-    public partial class MainForm :XtraForm {
+    public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm {
         public MainForm() {
             InitializeComponent();
+
+            treeList1.Columns.AddVisible("Value");
+            treeList2.Columns.AddVisible("Value");
+            
+            for (int i = 1; i < 5; i++) {
+                int parentId = treeList1.AppendNode(new object[] { $"{i}" }, -1).Id;
+                for (int j = 1; j < 4; j++) {
+                    int childId = treeList1.AppendNode(new object[] { $"{i}.{j}" }, parentId).Id;
+                    for (int k = 1; k < 3; k++) {
+                        treeList1.AppendNode(new object[] { $"{i}.{j}.{k}" }, childId);
+                    }
+                }
+            }
+
+            copyButtonItem.ItemClick += CopyButtonItem_ItemClick;
+            clearButtonItem.ItemClick += ClearButtonItem_ItemClick;
         }
 
-        void UpdateControlsState() {
-            btnAddChild.Enabled = sourceTreeList.FocusedNode != null;
-            btnCopy.Enabled = sourceTreeList.Nodes.Count > 0;
-            btnDeleteNode.Enabled = sourceTreeList.FocusedNode != null;
-            btnAddColumn.Enabled = !string.IsNullOrEmpty(txtColumnName.Text);
+        private void CopyButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            foreach (TreeListNode node in treeList1.Nodes) {
+                CopyNodeWithChildren(node, treeList2.Nodes);
+            }
         }
 
-        private void OnFormLoad(object sender, EventArgs e) {
-            UpdateControlsState();
+        private void ClearButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            treeList2.ClearNodes();
         }
 
-        private void OnEditorColumnNameTextChanged(object sender, EventArgs e) {
-            UpdateControlsState();
+        /// <summary>
+        /// Copies a single node to the target node collection.
+        /// </summary>
+        /// <returns>The newly created node.</returns>
+        private TreeListNode CopyNode(TreeListNode sourceNode, TreeListNodes targetNodes) {
+            int columnCount = sourceNode.TreeList.Columns.Count;
+            object[] values = Enumerable.Range(0, columnCount).Select(x => sourceNode.GetValue(x)).ToArray();
+            var newNode = targetNodes.Add(values);
+            newNode.Assign(sourceNode);
+            return newNode;
         }
 
-        private void OnSourceTreeListNodeChanged(object sender, NodeChangedEventArgs e) {
-            if (e.ChangeType == NodeChangeTypeEnum.Add || e.ChangeType == NodeChangeTypeEnum.Remove)
-                UpdateControlsState();
-        }
+        /// <summary>
+        /// Copies a single node, along with all its children, to the target node collection.
+        /// </summary>
+        /// <returns>The newly created node.</returns>
+        private TreeListNode CopyNodeWithChildren(TreeListNode sourceNode, TreeListNodes targetNodes) {
+            TreeListNode result = null;
+            
+            var stack = new Stack<(TreeListNode SourceNode, TreeListNodes TargetNodes)>();
+            stack.Push((sourceNode, targetNodes));
+            while (stack.Any()) {
+                var operation = stack.Pop();
+                var newNode = CopyNode(operation.SourceNode, operation.TargetNodes);
+                if (result == null) result = newNode;
+                foreach (TreeListNode node in operation.SourceNode.Nodes.Reverse()) {
+                    stack.Push((node, newNode.Nodes));
+                }
+            }
 
-        private void OnSourceTreeListFocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e) {
-            UpdateControlsState();
-        }
-
-        private void OnAddColumnButtonClick(object sender, EventArgs e) {
-            if (sourceTreeList.Columns.ColumnByFieldName(txtColumnName.Text) == null)
-                sourceTreeList.Columns.AddField(txtColumnName.Text).Visible = true;
-             else XtraMessageBox.Show(string.Format("The source TreeList already contains the {0} column",
-                  txtColumnName.Text), "Copy Nodes Example", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void OnAddRootButtonClick(object sender, EventArgs e) {
-            sourceTreeList.AppendNode(null, null);
-        }
-
-        private void OnAddChildButtonClick(object sender, EventArgs e) {
-            sourceTreeList.AppendNode(null, sourceTreeList.FocusedNode);
-            sourceTreeList.FocusedNode.Expanded = true;
-        }
-
-        private void OnDeleteNodeButtonClick(object sender, EventArgs e) {
-            sourceTreeList.DeleteNode(sourceTreeList.FocusedNode);
-        }
-
-        private void OnCopyButtonClick(object sender, EventArgs e) {
-            TreeList destTreeList = container.Panel2.Controls.Count > 0 ?
-                (TreeList)container.Panel2.Controls[0] : CreateDestTreeList();
-            destTreeList.ClearNodes();
-            destTreeList.Columns.Clear();
-            foreach (TreeListColumn col in sourceTreeList.Columns)
-                destTreeList.Columns.AddField(col.FieldName).Visible = true;
-            sourceTreeList.NodesIterator.DoOperation(new CopyNodesOperation(destTreeList));
-        }
-
-        TreeList CreateDestTreeList() {
-            TreeList result = new TreeList();
-            result.Dock = DockStyle.Fill;
-            result.Parent = container.Panel2;
             return result;
         }
     }
