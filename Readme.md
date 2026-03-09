@@ -9,7 +9,7 @@
 
 This example demonstrates how to copy unbound nodes from one TreeList control to another.
 
-![WinForms TreeList - Copy nodes from one TreeList to another](https://raw.githubusercontent.com/DevExpress-Examples/how-to-copy-nodes-from-one-treelist-to-another-e3164/18.2.16%2B/media/winforms-treelist-copy-nodes.gif)
+![WinForms TreeList - Copy nodes from one TreeList to another](media/winforms-treelist-copy-nodes.gif)
 
 
 ## Files to Review
@@ -28,3 +28,4 @@ This example demonstrates how to copy unbound nodes from one TreeList control to
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
